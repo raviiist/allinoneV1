@@ -654,7 +654,7 @@ public class Controller {
 
     @FXML
     public void showPOP(ActionEvent event) {
-        System.out.println("Hello Ravi, this source has been uploaded to github.");
+        System.out.println("This source has been uploaded to github.");
         String command1="netstat";
         //String command2="diskmgmt.msc";
         String command2="/home/ravi/f1";
