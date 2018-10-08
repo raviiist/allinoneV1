@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="772.0" prefWidth="387.0" stylesheets="@testStyle.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Label alignment="CENTER" layoutX="111.0" layoutY="39.0" prefHeight="32.0" prefWidth="179.0" text="Daily Operations" textAlignment="CENTER" textFill="#d2ffc7">
+         <font>
+            <Font name="Manjari Bold" size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="b2" layoutX="143.0" layoutY="71.0" mnemonicParsing="false" onAction="#genplot" prefHeight="37.0" prefWidth="101.0" text="DailyPlot">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="b1" layoutX="31.0" layoutY="71.0" mnemonicParsing="false" onAction="#gendss" prefHeight="37.0" prefWidth="101.0" text="ACE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="b3" layoutX="255.0" layoutY="71.0" mnemonicParsing="false" onAction="#genreport" prefHeight="37.0" prefWidth="101.0" text="Dly Report">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="b21" layoutX="143.0" layoutY="135.0" mnemonicParsing="false" onAction="#aissum" prefHeight="37.0" prefWidth="101.0" text="NRT Sharp">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="b11" layoutX="31.0" layoutY="135.0" mnemonicParsing="false" onAction="#genais" prefHeight="37.0" prefWidth="101.0" text="SHARP">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="b31" layoutX="255.0" layoutY="135.0" mnemonicParsing="false" onAction="#gensps0" prefHeight="37.0" prefWidth="101.0" text="SPS 0/12">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="b211" layoutX="143.0" layoutY="199.0" mnemonicParsing="false" onAction="#rs2events" prefHeight="37.0" prefWidth="101.0" text="OBTEvents">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="b111" layoutX="31.0" layoutY="199.0" mnemonicParsing="false" onAction="#showgts" prefHeight="37.0" prefWidth="101.0" text="GTS">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="b311" layoutX="255.0" layoutY="199.0" mnemonicParsing="false" onAction="#genpop" prefHeight="37.0" prefWidth="101.0" text="POP">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="b2111" layoutX="143.0" layoutY="262.0" mnemonicParsing="false" onAction="#popblk" prefHeight="37.0" prefWidth="101.0" text="POP Blocks">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="b1111" layoutX="31.0" layoutY="262.0" mnemonicParsing="false" onAction="#popdetails" prefHeight="37.0" prefWidth="101.0" text="POP Details">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="b3111" layoutX="255.0" layoutY="262.0" mnemonicParsing="false" onAction="#genniorb" prefHeight="37.0" prefWidth="101.0" text="NI/ORB">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="b212" layoutX="143.0" layoutY="384.0" mnemonicParsing="false" onAction="#ssrdetails" prefHeight="37.0" prefWidth="101.0" text="SSR">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="b112" layoutX="31.0" layoutY="384.0" mnemonicParsing="false" onAction="#chkpbalive" prefHeight="37.0" prefWidth="101.0" text="POPVerify">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="b312" layoutX="255.0" layoutY="384.0" mnemonicParsing="false" onAction="#showdrift" prefHeight="25.0" prefWidth="101.0" text="Drift">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Button>
+      <Button fx:id="b3121" layoutX="257.0" layoutY="409.0" mnemonicParsing="false" onAction="#driftSL" prefHeight="22.0" prefWidth="44.0" text="SL">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Button>
+      <Button fx:id="b31211" layoutX="306.0" layoutY="409.0" mnemonicParsing="false" onAction="#driftNS" prefHeight="14.0" prefWidth="44.0" text="NS">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Button>
+      <Button fx:id="b21111" layoutX="143.0" layoutY="323.0" mnemonicParsing="false" onAction="#arcCheck" prefHeight="37.0" prefWidth="101.0" text="Arc Check">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="b11111" layoutX="31.0" layoutY="323.0" mnemonicParsing="false" onAction="#chkG2B" prefHeight="37.0" prefWidth="101.0" text="ACE CMDs">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="b31111" layoutX="255.0" layoutY="323.0" mnemonicParsing="false" onAction="#schprint" prefHeight="37.0" prefWidth="101.0" text="Print Sch">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="72.0" layoutY="442.0" prefHeight="32.0" prefWidth="245.0" text=" Special Operations Log" textAlignment="CENTER" textFill="#d2ffc7">
+         <font>
+            <Font name="Manjari Bold" size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="b21112" layoutX="143.0" layoutY="474.0" mnemonicParsing="false" onAction="#sadalog" prefHeight="37.0" prefWidth="101.0" text="OM Log">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="b11112" layoutX="31.0" layoutY="474.0" mnemonicParsing="false" onAction="#aocelog" prefHeight="37.0" prefWidth="101.0" text="OBCDriftLog">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="b31112" layoutX="255.0" layoutY="474.0" mnemonicParsing="false" onAction="#orbperlog" prefHeight="37.0" prefWidth="101.0" text="DRC Log">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="b211111" layoutX="143.0" layoutY="534.0" mnemonicParsing="false" onAction="#drclog" prefHeight="37.0" prefWidth="101.0" text="DRC">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="b111111" layoutX="31.0" layoutY="534.0" mnemonicParsing="false" onAction="#omlog" prefHeight="37.0" prefWidth="101.0" text="OM">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="102.0" layoutY="-2.0" prefHeight="45.0" prefWidth="179.0" text="ALL IN ONE" textAlignment="CENTER" textFill="#d2ffc7">
+         <font>
+            <Font name="Rachana Bold" size="31.0" />
+         </font>
+         <effect>
+            <DropShadow offsetX="2.0" offsetY="2.0" spread="0.58" />
+         </effect>
+      </Label>
+      <Label alignment="CENTER" layoutX="109.0" layoutY="588.0" prefHeight="32.0" prefWidth="169.0" text="Others Utilities" textAlignment="CENTER" textFill="#d2ffc7">
+         <font>
+            <Font name="Manjari Bold" size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="b211121" layoutX="143.0" layoutY="620.0" mnemonicParsing="false" onAction="#phonebook" prefHeight="37.0" prefWidth="101.0" text="Phone">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="b111121" layoutX="31.0" layoutY="620.0" mnemonicParsing="false" onAction="#cmdlog" prefHeight="37.0" prefWidth="101.0" text="CMD Log">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="b311121" layoutX="255.0" layoutY="620.0" mnemonicParsing="false" onAction="#rs2cntdwn" prefHeight="37.0" prefWidth="101.0" text="SAT CntDwn">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="72.0" fitWidth="114.0" layoutX="31.0" layoutY="682.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-gps-antenna-96.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="56.0" layoutX="300.0" layoutY="702.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@u1F913.png" />
+         </image>
+      </ImageView>
+      <Hyperlink fx:id="testSceneLink" layoutX="140.0" layoutY="730.0" onAction="#chaneSceneNow" text="Change Scene" />
+   </children>
+</AnchorPane>
