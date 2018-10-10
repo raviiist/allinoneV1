@@ -19,6 +19,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.PosixFileAttributes;
 import java.nio.file.attribute.PosixFilePermission;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Set;
 
 public class Controller {
@@ -649,6 +651,25 @@ public class Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        Time t = new Time();
+        Time t2 = new Time();
+        t2.changeTimeByDelta(5000);        // 3 milliseconds it takes to change the time/execute a line
+        System.out.println(t.toString()+", changed is:"+t2.toString());
+        long l1 = t.getTimeInMillis();
+        SimpleDateFormat sdfI6 = new SimpleDateFormat("yyyy DDD HH-mm-ss.SSS");
+        SimpleDateFormat sdfCal = new SimpleDateFormat("yyyy MM dd HH mm ss SSS");
+        SimpleDateFormat sdfCal1 = new SimpleDateFormat("yyyy MMM dd HH mm ss SSS");
+        SimpleDateFormat sdfCal2 = new SimpleDateFormat("EEE, MMM/MMMMM d,yyyy hh mm ss SSS: a, z:Z, yyMMddHHmmssZ:XXX");
+        System.out.println(t.toString()+", "+t.getString(sdfI6)+", "+t.getString(sdfCal2)+":"+l1);
+        String s1="2018 282 17 59 11 864";
+        Time t3 = new Time(s1);
+        System.out.println(t3.getString(sdfCal));
+        /*try {
+            System.out.println(sdfCal.parse(s1));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }*/
     }
 
 
