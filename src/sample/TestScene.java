@@ -36,15 +36,21 @@ public class TestScene {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirm?");
         alert.setHeaderText("Are you sure you want to close this window?");
-        alert.setContentText("Choose your option.");
+        //alert.setContentText("Choose your option.");
+        alert.setContentText("");
         ButtonType buttonTypeOne = new ButtonType("Yes");
         ButtonType buttonTypeCancel = new ButtonType("No", ButtonBar.ButtonData.CANCEL_CLOSE);
         alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeCancel);
 
+        //This changes the alert box look up as css style...
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(
+        getClass().getResource("testStyle.css").toExternalForm());
+
         Thread thread = new Thread(() -> {
             try {
-                // Wait for 5 secs
-                Thread.sleep(25000);
+                // Wait for 10 secs
+                Thread.sleep(10000);
                 if (alert.isShowing()) {
                     Platform.runLater(() -> alert.close());
                 }
@@ -54,14 +60,13 @@ public class TestScene {
         });
         thread.setDaemon(true);
         thread.start();
-        Optional<ButtonType> result = alert.showAndWait();
-        //result=buttonTypeOne.getButtonData()
-        if(result.equals(buttonTypeOne)) {
-            //System.out.println(alert.getButtonTypes().equals(buttonTypeOne));
+        //Optional<ButtonType> result = alert.showAndWait();
+        alert.showAndWait();
+
+        if(alert.getResult().equals(buttonTypeOne)) {
             System.out.println("yes");
             System.exit(0);
         }
-        System.out.println(alert.getButtonTypes().equals(buttonTypeOne));
-        //System.exit(0);
+        System.out.println(alert.getResult().equals(buttonTypeOne));
     }
 }
