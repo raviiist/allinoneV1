@@ -125,7 +125,11 @@ public class Controller {
     String sat= dconf[0];
     String hm= dconf[1];
     String enD=".exec";
-    String fbrowser=dconf[2],payload=dconf[3],niorb=dconf[4],dailyplt=dconf[5],dailyrpt=dconf[6],acecmd=dconf[7],sharp=dconf[8],nrt=dconf[9],aceexe=dconf[10],sps=dconf[11],gts=dconf[12],obtevents=dconf[13],popverify=dconf[14],popdetail=dconf[15],popblk=dconf[16],arcchk=dconf[17],printsch=dconf[18],ssrdetail=dconf[19],obcdrft=dconf[20],dftsl=dconf[21],dftns=dconf[22],obcdftlog=dconf[23],omcmd=dconf[24],drccmd=dconf[25],omlog=dconf[26],drclog=dconf[27],cmdlog=dconf[28],phone=dconf[29],satsch=dconf[30];
+    String fbrowser=dconf[2],payload=dconf[3],niorb=dconf[4],dailyplt=dconf[5],dailyrpt=dconf[6],acecmd=dconf[7],sharp=dconf[8],
+            nrt=dconf[9],aceexe=dconf[10],sps=dconf[11],gts=dconf[12],obtevents=dconf[13],popverify=dconf[14],popdetail=dconf[15],
+            popblk=dconf[16],arcchk=dconf[17],printsch=dconf[18],ssrdetail=dconf[19],obcdrft=dconf[20],dftsl=dconf[21],
+            dftns=dconf[22],obcdftlog=dconf[23],omcmd=dconf[24],drccmd=dconf[25],omlog=dconf[26],drclog=dconf[27],
+            cmdlog=dconf[28],phone=dconf[29],satsch=dconf[30];
 
     //private Stage primaryStage;
 
@@ -164,7 +168,9 @@ public class Controller {
 
     public String loadConfigData(Path file) {
         String line = null, satids="xxx", homedir="",noofexe="";
-        String FBROWSER="",PAYLOAD="",NIORB="",DAILYPLT="",DAILYRPT="",ACECMD="",SHARP="",NRT="",ACEEXE="",SPS="",GTS="",OBTEVENTS="",POPVERIFY="",POPDETAIL="",POPBLK="",ARCCHK="",PRINTSCH="",SSRDETAIL="",OBCDRFT="",DFTSL="",DFTNS="",OBCDFTLOG="",OMCMD="",DRCCMD="",OMLOG="",DRCLOG="",CMDLOG="",PHONE="",SATSCH="";
+        String FBROWSER="",PAYLOAD="",NIORB="",DAILYPLT="",DAILYRPT="",ACECMD="",SHARP="",NRT="",ACEEXE="",SPS="",GTS="",
+                OBTEVENTS="",POPVERIFY="",POPDETAIL="",POPBLK="",ARCCHK="",PRINTSCH="",SSRDETAIL="",OBCDRFT="",DFTSL="",
+                DFTNS="",OBCDFTLOG="",OMCMD="",DRCCMD="",OMLOG="",DRCLOG="",CMDLOG="",PHONE="",SATSCH="";
         String sp[];
         try {
             BufferedReader br = Files.newBufferedReader(file);
@@ -328,7 +334,10 @@ public class Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return satids+" "+homedir+" "+FBROWSER+" "+PAYLOAD+" "+NIORB+" "+DAILYPLT+" "+DAILYRPT+" "+ACECMD+" "+SHARP+" "+NRT+" "+ACEEXE+" "+SPS+" "+GTS+" "+OBTEVENTS+" "+POPVERIFY+" "+POPDETAIL+" "+POPBLK+" "+ARCCHK+" "+PRINTSCH+" "+SSRDETAIL+" "+OBCDRFT+" "+DFTSL+" "+DFTNS+" "+OBCDFTLOG+" "+OMCMD+" "+DRCCMD+" "+OMLOG+" "+DRCLOG+" "+CMDLOG+" "+PHONE+" "+SATSCH+" "+noofexe;
+        return satids+" "+homedir+" "+FBROWSER+" "+PAYLOAD+" "+NIORB+" "+DAILYPLT+" "+DAILYRPT+" "+ACECMD+" "+SHARP+" "+NRT+
+                " "+ACEEXE+" "+SPS+" "+GTS+" "+OBTEVENTS+" "+POPVERIFY+" "+POPDETAIL+" "+POPBLK+" "+ARCCHK+" "+PRINTSCH+
+                " "+SSRDETAIL+" "+OBCDRFT+" "+DFTSL+" "+DFTNS+" "+OBCDFTLOG+" "+OMCMD+" "+DRCCMD+" "+OMLOG+" "+DRCLOG+
+                " "+CMDLOG+" "+PHONE+" "+SATSCH+" "+noofexe;
     }
 
     //String stid=st.charAt(0)+""+st.charAt(1)+""+st.charAt(2);
