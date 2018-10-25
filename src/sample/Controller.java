@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,6 +22,7 @@ import java.nio.file.attribute.PosixFileAttributes;
 import java.nio.file.attribute.PosixFilePermission;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Set;
 
 public class Controller {
@@ -654,7 +656,8 @@ public class Controller {
 
         Time t = new Time();
         Time t2 = new Time();
-        t2.changeTimeByDelta(5000);        // 3 milliseconds it takes to change the time/execute a line
+        // 3 milliseconds it takes to change the time/execute a line
+        t2.changeTimeByDelta(5000);
         System.out.println(t.toString()+", changed is:"+t2.toString());
         long l1 = t.getTimeInMillis();
         SimpleDateFormat sdfI6 = new SimpleDateFormat("yyyy DDD HH-mm-ss.SSS");
@@ -662,9 +665,23 @@ public class Controller {
         SimpleDateFormat sdfCal1 = new SimpleDateFormat("yyyy MMM dd HH mm ss SSS");
         SimpleDateFormat sdfCal2 = new SimpleDateFormat("EEE, MMM/MMMMM d,yyyy hh mm ss SSS: a, z:Z, yyMMddHHmmssZ:XXX");
         System.out.println(t.toString()+", "+t.getString(sdfI6)+", "+t.getString(sdfCal2)+":"+l1);
-        String s1="2018 282 17 59 11 864";
-        Time t3 = new Time(s1);
-        System.out.println(t3.getString(sdfCal));
+        String s0=t.toString()+", "+t.getString(sdfI6)+", "+t.getString(sdfCal2)+":"+l1;
+        //String[] ar1={t.toString(),", ",t.getString(sdfI6),", ",t.getString(sdfCal2),":",l1}
+        System.out.println("-------------------");
+        //Splits into strings with defined regex And converts strings into array
+        String[] ar1=s0.split(" ");
+        // trim() -->it has no leading or trailing white space.
+        System.out.println(ar1.length+"::"+ar1[ar1.length-1]+"::"+s0.trim()+"::");
+        System.out.println("-------------------");
+        // "\s+" this takes care of multiple whitespaces with 10 split size/blocks of 10 objects/ array size of 10
+        String[] ar2=s0.trim().split("\\s+",10);
+        // converts Arrays to string.
+        System.out.println((ar2+"::"+ar2.length+"::"+ Arrays.toString(ar2).replaceAll("]","").replaceAll("\\[","").replaceAll(", "," ")));
+        System.out.println(ar2+"::"+ar2.length+"::"+s0);
+        System.out.println("-------------------");
+        String s1="2018 288 15-39-11.864";
+        Time t3 = new Time(s1,sdfI6);
+        System.out.println(t3.getTimeInMillis() +" "+t.getTimeInMillis());
         /*try {
             System.out.println(sdfCal.parse(s1));
         } catch (ParseException e) {
