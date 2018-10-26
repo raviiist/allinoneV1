@@ -1,6 +1,7 @@
 .root {
     /*-fx-background-image: url("background.jpg"); */
-	-fx-background-color: #00223b;
+	/*-fx-background-color: #00223b; */
+	-fx-background-color: #0d1d28;
 }
 /* https://icons8.com/icon/set/pokemon/all                          for icons */
 .button {
@@ -42,9 +43,9 @@
 /*.button:hover {
     -fx-background-color: linear-gradient(#2A5058, #61a2b1);
 }*/
-.button:pressed{
+.button:pressed, .button:default:hover:pressed {
 	-fx-background-color: rgba(180,180,180,0.55); 
-
+	-fx-text-fill: #1d1d1d;
 }
 
 .button:hover{
@@ -60,7 +61,9 @@
 
 } */
 
-
+.button:default:hover {
+    -fx-background-color: derive(-fx-focus-color,30%);
+}
 /*.label {
     -fx-font-size: 12px;
     -fx-font-weight: bold;
